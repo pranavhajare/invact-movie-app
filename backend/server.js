@@ -26,10 +26,6 @@ app.use(
   })
 );
 
-app.get("/", function (req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.send("hello world");
-});
 
 app.get("/", (req, res) => {
   res.send("Server is running fine");
