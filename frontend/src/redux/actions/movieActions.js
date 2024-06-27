@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   MOVIE_LIST_REQUEST,
   MOVIE_LIST_SUCCESS,
@@ -6,25 +6,26 @@ import {
   MOVIE_ADD_SUCCESS,
   MOVIE_DELETE_SUCCESS,
   MOVIE_UPDATE_SUCCESS,
-} from '../types';
+} from "../types";
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api', 
+  baseURL: "https://invact-movie-app-z7ap.onrender.com/api",
 });
 
 export const listMovies = () => async (dispatch) => {
   try {
     dispatch({ type: MOVIE_LIST_REQUEST });
-    const { data } = await api.get('/movies');
+    const { data } = await api.get("/movies");
     dispatch({ type: MOVIE_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: MOVIE_LIST_FAIL, payload: error.message });
+    
   }
 };
 
 export const addMovie = (movie) => async (dispatch) => {
   try {
-    const { data } = await api.post('/movies', movie);
+    const { data } = await api.post("/movies", movie);
     dispatch({ type: MOVIE_ADD_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: MOVIE_LIST_FAIL, payload: error.message });
@@ -39,7 +40,6 @@ export const deleteMovie = (id) => async (dispatch) => {
     dispatch({ type: MOVIE_LIST_FAIL, payload: error.message });
   }
 };
-
 
 // export const updateMovie = (id) => async (dispatch) => {
 //   try {
