@@ -1,8 +1,8 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const connectDB = require('./config/db');
-const movieRoutes = require('./routes/MovieRoutes');
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const connectDB = require("./config/db");
+const movieRoutes = require("./routes/MovieRoutes");
 
 dotenv.config();
 
@@ -12,12 +12,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.send("hello world");
+});
 
-app.get('/', (req, res) => {
-    res.send('Server is running fine');
-  });
-  
-app.use('/api/movies', movieRoutes);
+app.get("/", (req, res) => {
+  res.send("Server is running fine");
+});
+
+app.use("/api/movies", movieRoutes);
 
 const PORT = process.env.PORT || 5000;
 

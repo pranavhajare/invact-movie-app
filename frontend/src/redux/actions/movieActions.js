@@ -19,7 +19,6 @@ export const listMovies = () => async (dispatch) => {
     dispatch({ type: MOVIE_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: MOVIE_LIST_FAIL, payload: error.message });
-    
   }
 };
 
