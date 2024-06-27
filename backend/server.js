@@ -9,6 +9,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const allowedOrigins = ["https://invact-movie-app-beta.vercel.app"];
@@ -30,9 +31,7 @@ app.get("/", function (req, res) {
   res.send("hello world");
 });
 
-app.get("/api/movies", (req, res) => {
-  res.json({ movies: [] });
-});
+
 
 app.get("/", (req, res) => {
   res.send("Server is running fine");
