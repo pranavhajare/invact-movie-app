@@ -3,9 +3,9 @@
 ## Overview
 The Movie Watchlist application is a web-based tool that allows users to manage a list of movies they want to watch. Users can add, edit, and delete movies from their watchlist, mark movies as watched or unwatched, and rate and review movies. State management is handled using Redux to ensure efficient and predictable state updates.
 
-## Deployed App 🖊
+## Deployed App 
 #### Frontend:https://invact-movie-app-pi.vercel.app/
-#### Backend: [https://invact-movie-app-pi.vercel.app/](https://invact-movie-app-z7ap.onrender.com)
+#### Backend: [https://invact-movie-app-z7ap.onrender.com](https://invact-movie-app-z7ap.onrender.com)
 
 
 ## Features
