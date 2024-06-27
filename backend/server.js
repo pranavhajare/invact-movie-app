@@ -31,10 +31,12 @@ app.get("/", function (req, res) {
   res.send("hello world");
 });
 
-
-
 app.get("/", (req, res) => {
   res.send("Server is running fine");
+});
+
+app.get("/api/movies", (req, res) => {
+  res.json({ movies: [] });
 });
 
 app.use("/api/movies", movieRoutes);
